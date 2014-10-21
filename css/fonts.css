@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face{
+	font-family: 'Exo2.0-Light';
+	src: url(../fonts/Exo2.0-Light.otf);
+}
+
+@font-face{
+	font-family: 'Exo2.0';
+	src: url(../fonts/Exo2.0-Regular.otf);
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: 'Siginka-bold';
+	src: url(../fonts/signika/Signika-Bold.otf);
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: 'Siginka-light';
+	src: url(../fonts/signika/Signika-light.otf);
+}
+
+@font-face {
+    font-family: 'aileronregular';
+    src: url('../fonts/alieron/aileron-regular-webfont.eot');
+    src: url('../fonts/alieron/aileron-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alieron/aileron-regular-webfont.woff') format('woff'),
+         url('../fonts/alieron/aileron-regular-webfont.ttf') format('truetype'),
+         url('../fonts/alieron/aileron-regular-webfont.svg#aileronregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

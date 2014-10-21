@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.backdrop{
+	background-color: #363636;
+}
+
+.backdrop li{
+	transition: ease 0.3s;
+}
+
+.backdrop li:hover:not(.heading),
+.backdrop .active{
+	background-color: #fff;
+	color: #27434B;
+}
+
+#admin-menu .icon-lg{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#admin-menu a{
+	margin-left: 15px;
+}
+#admin-menu li.heading{
+
+}

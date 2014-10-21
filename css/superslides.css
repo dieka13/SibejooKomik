@@ -1,0 +1,128 @@
+#slides {
+  position: relative;
+}
+#slides .slides-container {
+  display: none;
+}
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  width: 100%;
+}
+.slides-navigation a {
+  position: fixed;
+  display: block;
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  width: 50px;
+  box-shadow: 0 0 8px 2px #000;
+}
+.slides-navigation a.prev {
+  left: 10px;
+  border-radius: 25px 5px 5px 25px;
+}
+.slides-navigation a.next {
+  right: 10px;
+  border-radius: 5px 25px 25px 5px;
+}
+
+.slides-pagination {
+  position: fixed;
+  z-index: 3;
+  bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+.slides-pagination a {
+  border: 2px solid #222;
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=");
+  margin: 2px;
+  overflow: hidden;
+  text-indent: -100%;
+  box-shadow: 2px 2px 2px #000;
+}
+.slides-pagination a.current {
+  background: #222;
+}
+
+.slide-content-wrapper {
+	width: 60%;
+	min-width: 400px;
+	font-family: 'Exo2.0';
+	font-size: 1.2rem;
+	margin: 5% auto;
+	text-align: center;
+}
+.slide-content-title {
+	padding: 0;
+	margin: 0 0 10px 0;
+	display: block;
+	font-family: 'Siginka';
+	font-size: 4rem;
+	color: #FF3519;
+	text-shadow: 2px 3px 2px #000;
+	border: none;
+}
+.slide-content {
+	display: inline-block;
+	background: rgba(255,255,255,.5);
+	box-shadow: 0 0 10px 0 #000;
+	border-radius: 25px;
+	padding: 10px;
+}
+.slide-content p {
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0;
+}
+.slide-content p:last-child {
+	margin-bottom: 0;
+}
+
+.slide-button {
+	font-family: 'Exo2.0';
+	font-size: 2rem;
+	cursor: pointer;
+	margin: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px #000 solid;
+	box-shadow: 0 2px 5px #000;
+	background: radial-gradient(#ff3519,#cc1900);
+	color: #fff;
+	text-shadow: 2px 2px #000;
+	text-align: center;
+	transition: all 1s ease-in;
+	text-decoration: none;
+}
+.slide-button:hover,.slide-button:focus {
+	background: radial-gradient(#ff7866,#cc1900); 
+}
