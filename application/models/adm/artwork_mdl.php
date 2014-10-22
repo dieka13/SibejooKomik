@@ -16,6 +16,7 @@ class Artwork_mdl extends CI_Model
 	{
 		$this->db->from('artwork');
 		$this->db->join('kategori_artwork', 'kategori_artwork.id_kategori = artwork.id_kategori');
+		$this->db->order_by("tanggal_upload", "desc");
 		
 		if(NULL !== $columns)
 		{
