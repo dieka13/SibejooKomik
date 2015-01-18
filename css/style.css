@@ -62,7 +62,7 @@
 	  -moz-border-radius: 5px;
 	  border-radius: 5px;
 	}
-	.box img, { display: block; width: 100%; }
+	.box img { display: block; width: 100%; }
 	
 	/* unfortunately masonry needs hard pxs for images */
 	.col1 { width: 80px; }

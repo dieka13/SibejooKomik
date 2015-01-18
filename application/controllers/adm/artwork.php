@@ -126,7 +126,7 @@ class Artwork extends CI_Controller
 				$config['maintain_ratio'] = TRUE;
 				$config['master_dim'] = 'width';
 				$config['width'] = 280;
-				$config['height'] = 280;
+				$config['height'] = 280;*/
 				
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
@@ -150,7 +150,7 @@ class Artwork extends CI_Controller
 					'alert_class' => 'success'
 				);
 				$this->session->set_flashdata($flash);
-				redirect('admin/artwork');*/
+				redirect('admin/artwork');
 			}
 			else
 			{
