@@ -3,7 +3,7 @@
         	<div class="large-12 column clearfix">
             	<h2>Upload Komik</h2>
                 
-				<form action="<?php echo site_url('admin/artwork/do_manual_upload') ?>" enctype="multipart/form-data" method="post" data-abide>
+				<form action="<?php echo site_url('admin/komik/do_upload') ?>" enctype="multipart/form-data" method="post" data-abide>
                     <div class="row">
                     	<?php echo form_hidden($this->security->get_csrf_token_name(), $this->security->get_csrf_hash()); ?>
                         

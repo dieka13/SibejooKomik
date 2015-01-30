@@ -3,10 +3,14 @@
   	<div class="large-2 columns backdrop" data-equalizer-watch>
     	<ul id="admin-menu" class="side-nav">
         
-        	<li class="heading section"><span class="fi-wrench icon-lg icon-middle"></span> Admin Page</li>
+            <li class="heading section"><span class="fi-wrench icon-lg icon-middle"></span> Admin Page</li>
             <li <?php if($module == "admin page" && $action == "home") {?>class="active"<?php } ?>><a href="<?php echo site_url('admin') ?>">Home</a></li>
             
-        	<li class="heading section"><span class="fi-photo icon-lg icon-middle"></span> Artwork</li>
+            <li class="heading section"><span class="fi-book icon-lg icon-middle"></span> Komik</li>
+            <li <?php if($module == "komik" && $action == "manage") {?>class="active"<?php } ?>><a href="<?php echo site_url('admin/komik/') ?>">Manage Komik</a></li> 
+            <li <?php if($module == "komik" && $action == "upload") {?>class="active"<?php } ?>><a href="<?php echo site_url('admin/komik/upload/') ?>">Upload Komik</a></li>
+            
+            <li class="heading section"><span class="fi-photo icon-lg icon-middle"></span> Artwork</li>
             <li <?php if($module == "artwork" && $action == "manage") {?>class="active"<?php } ?>><a href="<?php echo site_url('admin/artwork/') ?>">Manage Artwork</a></li> 
             <li <?php if($module == "artwork" && $action == "upload") {?>class="active"<?php } ?>><a href="<?php echo site_url('admin/artwork/upload/') ?>">Upload Artwork</a></li>
             

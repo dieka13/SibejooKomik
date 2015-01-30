@@ -13,7 +13,7 @@ class Komik_mdl extends CI_Model
     function get_all_komik()
     {
         
-        $this->db->order_by('tanggal_upload');
+        $this->db->order_by('tanggal_upload','DESC');
         $query = $this->db->get('komik');
         return $query->result();
     }

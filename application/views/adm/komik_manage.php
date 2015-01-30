@@ -17,6 +17,7 @@
                         <th>Deskripsi</th>
                         <th>Tanggal Upload</th>
                         <th>Jumlah Halaman</th>
+                        <th>Aksi</th>
                     </thead>
                     <tbody>
 					<?php foreach($komik as $a) { ?><tr>
@@ -26,9 +27,9 @@
                         <td><?php echo $a->tanggal_upload ?></td>
                         <td><?php echo $a->jumlah_halaman ?></td>
                         <td>
-                        	<a href="<?php echo site_url('admin/artwork/view/'.$a->id_artwork); ?>"><i class="fi-photo icon-3x"></i></a>
-                        	<a href="<?php echo site_url('admin/artwork/edit/'.$a->id_artwork); ?>"><i class="fi-page-edit icon-3x"></i></a>		
-                        	<a href="<?php echo site_url('admin/artwork/delete/'.$a->id_artwork); ?>"><i class="fi-page-delete icon-3x"></i></a>
+                        	<a href="<?php echo site_url('admin/komik/view/'.$a->id_artwork); ?>"><i class="fi-photo icon-3x"></i></a>
+                        	<a href="<?php echo site_url('admin/komik/edit/'.$a->id_artwork); ?>"><i class="fi-page-edit icon-3x"></i></a>		
+                        	<a href="<?php echo site_url('admin/komik/delete/'.$a->id_artwork); ?>"><i class="fi-page-delete icon-3x"></i></a>
                         </td>
                     </tr><?php } ;?>
                     

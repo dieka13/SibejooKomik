@@ -47,7 +47,7 @@ class Komik extends CI_Controller
     function upload()
     {
         $info['module'] = "komik";
-        $info['action'] = "add";
+        $info['action'] = "upload";
 
         $this->output->nocache();
         $this->load->view('adm/header', $this->user_info);
@@ -56,6 +56,63 @@ class Komik extends CI_Controller
         $this->load->view('adm/footer');
         $this->load->view('adm/komik_jquery');
     }
+    
+    function _rearrange( $arr ){
+        foreach( $arr as $key => $all ){
+            foreach( $all as $i => $val ){
+                $new[$i][$key] = $val;   
+            }   
+        }
+        return $new;
+    }
+    
+    function do_upload()
+    {   
+        $this->load->library('form_validation');
+        $this->load->helper('file');
+
+        $this->form_validation->set_rules('judul', 'Judul', 'required|max_length[60]|strip');
+
+        if($this->form_validation->run() == FALSE )
+        {
+            $this->upload();
+        }
+        else
+        {
+            $upload_path = './komik/'.url_title($this->input->post('judul'));
+            if (!file_exists($upload_path))
+            {
+                mkdir($upload_path);
+                $halaman = $this->_rearrange($_FILES['halaman_komik']);
+                var_dump($halaman);
+                $i = 1;
+                foreach($halaman as $h)
+                {
+                    
+                    $moved = move_uploaded_file($h['tmp_name'], $upload_path."/".$i.substr($h['name'],-4));
+                    if($moved)
+                    {
+                        $i++;
+                    }
+                }
+            }
+            elseif (!is_dir($upload_path)) 
+            {
+                echo $upload_path, " is not a directory";
+            } else {
+                $flash = array(
+                    'alert' => 'Komik dengan judul "' . $this->input->post('judul') . '" sudah ada',
+                    'alert_class' => 'alert'
+                );
+
+                $this->session->set_flashdata($flash);
+                redirect('admin/komik');
+            }
+        }
+    }
+    
+    
+    
 }
 
 
