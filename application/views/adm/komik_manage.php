@@ -20,22 +20,22 @@
                         <th>Aksi</th>
                     </thead>
                     <tbody>
-					<?php foreach($komik as $a) { ?><tr>
+			<?php foreach($komik as $a) { ?><tr>
                         <td><?php echo $a->id_komik; ?></td>
                         <td><?php echo $a->judul; ?></td>
                         <td><?php echo $a->deskripsi; ?></td>
                         <td><?php echo $a->tanggal_upload ?></td>
                         <td><?php echo $a->jumlah_halaman ?></td>
                         <td>
-                        	<a href="<?php echo site_url('admin/komik/view/'.$a->id_artwork); ?>"><i class="fi-photo icon-3x"></i></a>
-                        	<a href="<?php echo site_url('admin/komik/edit/'.$a->id_artwork); ?>"><i class="fi-page-edit icon-3x"></i></a>		
-                        	<a href="<?php echo site_url('admin/komik/delete/'.$a->id_artwork); ?>"><i class="fi-page-delete icon-3x"></i></a>
+                        	<a href="<?php echo site_url('admin/komik/view/'.$a->id_komik); ?>"><i class="fi-photo icon-3x"></i></a>
+                        	<a href="<?php echo site_url('admin/komik/edit/'.$a->id_komik); ?>"><i class="fi-page-edit icon-3x"></i></a>		
+                        	<a href="<?php echo site_url('admin/komik/delete/'.$a->id_komik); ?>"><i class="fi-page-delete icon-3x"></i></a>
                         </td>
                     </tr><?php } ;?>
                     
                     </tbody>
                 </table>
-				<a class="button radius right has-icon" href="<?php echo site_url('admin/komik/upload') ?>"><i class="fi-plus icon-lg icon-middle"></i>	Upload Artwork</a>
+				<a class="button radius right has-icon" href="<?php echo site_url('admin/komik/upload') ?>"><i class="fi-plus icon-lg icon-middle"></i>	Upload Komik</a>
             </div>
         </div>
         

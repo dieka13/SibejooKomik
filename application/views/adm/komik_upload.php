@@ -63,9 +63,9 @@
 							echo form_submit($data, 'Upload');
 							?>
                         </div>
-                        
+                        <input type="hidden" value="1" name="jumlah_halaman" id="jumlah_halaman" />
                     </div>
-                      
+                
                 </form>                
             </div>
         </div>

@@ -10,6 +10,7 @@
                             "</label>\n"+
                     "</div>\n";
             $(".halaman_komik").last().after(data);
+            $("#jumlah_halaman").val(jumlah_halaman);
         });
         
     });

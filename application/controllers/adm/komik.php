@@ -17,11 +17,11 @@ class Komik extends CI_Controller
     {
         if($this->tank_auth->is_logged_in())
         {
-                $this->user_info = array('username' => $this->tank_auth->get_username());
+            $this->user_info = array('username' => $this->tank_auth->get_username());
         } 
         else 
         {
-                redirect('/auth/login', 'location');
+            redirect('/auth/login', 'location');
         }
     }
     
@@ -86,20 +86,44 @@ class Komik extends CI_Controller
                 $halaman = $this->_rearrange($_FILES['halaman_komik']);
                 var_dump($halaman);
                 $i = 1;
+				
                 foreach($halaman as $h)
                 {
-                    
                     $moved = move_uploaded_file($h['tmp_name'], $upload_path."/".$i.substr($h['name'],-4));
                     if($moved)
                     {
-                        $i++;
+						$uploaded[$i-1] = TRUE;
+						$i++;
                     }
                 }
+				
+				$check = TRUE;
+				for($j = 0; $j < $i-1; $j++){
+					if($uploaded[$j] == FALSE)
+						$check = FALSE;
+				}
+				
+				if($check == TRUE){
+					$data['judul'] = $this->input->post('judul');
+					$data['deskripsi'] = $this->input->post('deskripsi');
+					$data['jumlah_halaman'] = $i;
+					$this->komik_mdl->insert($data);
+					
+					$flash = array(
+						'alert' => 'Komik dengan judul "' . $this->input->post('judul') . '" berhasil ditambahkan',
+						'alert_class' => 'success'
+					);
+
+					$this->session->set_flashdata($flash);
+					redirect('admin/komik');
+				}
             }
             elseif (!is_dir($upload_path)) 
             {
                 echo $upload_path, " is not a directory";
-            } else {
+            } 
+            else 
+            {
                 $flash = array(
                     'alert' => 'Komik dengan judul "' . $this->input->post('judul') . '" sudah ada',
                     'alert_class' => 'alert'

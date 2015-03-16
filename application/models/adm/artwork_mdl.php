@@ -20,7 +20,7 @@ class Artwork_mdl extends CI_Model
 		
 		if(NULL !== $columns)
 		{
-			$this->db->select($columns);
+                    $this->db->select($columns);
 		}
 		
 		$query = $this->db->get();
@@ -68,32 +68,32 @@ class Artwork_mdl extends CI_Model
 		
 		if($this->db->affected_rows() > 0)
 		{
-			return TRUE;
+                    return TRUE;
 		}
 		else
 		{
-			return FALSE;
+                    return FALSE;
 		}
 	}
 	
 	function delete($id)
 	{
-		$this->db->where('id_artwork', $id);
-		$this->db->delete('artwork'); 
-		
-		if($this->db->affected_rows() > 0)
-		{
-			return TRUE;
-		}
-		else
-		{
-			return FALSE;
-		}
+            $this->db->where('id_artwork', $id);
+            $this->db->delete('artwork'); 
+
+            if($this->db->affected_rows() > 0)
+            {
+                return TRUE;
+            }
+            else
+            {
+                return FALSE;
+            }
 	}
 	
 	function get_thumbnail_enum()
 	{
-		return field_enums('artwork', 'ukuran_thumbnail');
+            return field_enums('artwork', 'ukuran_thumbnail');
 	}
 }
 ?>
